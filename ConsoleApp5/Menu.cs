@@ -18,6 +18,8 @@ namespace EditorHtml
             WriteOptions();
 
             var option = int .Parse(Console.ReadLine());
+
+            HandleMenuOption(option);
         }
 
         public static void DrawScreen()
@@ -29,7 +31,6 @@ namespace EditorHtml
             CriarEstruturaProjeto(30);
 
         }
-
 
         public static void WriteOptions()
         {
@@ -70,6 +71,22 @@ namespace EditorHtml
 
                 Console.Write("\n");
 
+            }
+        }
+
+        public static void HandleMenuOption(int option)
+        {
+            switch(option)
+            {
+                case 1: Editor.Show(); break;
+                case 2: Console.WriteLine("View"); break;
+                case 0:
+                    {
+                        Console.Clear();
+                        Environment.Exit(0);
+                        break;
+                    }
+                default: Show(); break;
             }
         }
     }
