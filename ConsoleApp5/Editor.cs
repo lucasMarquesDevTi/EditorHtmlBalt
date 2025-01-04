@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace EditorHtml
 {
     public static class Editor
@@ -33,6 +34,27 @@ namespace EditorHtml
 
             Console.WriteLine("---------------");
             Console.WriteLine(" Deseja Salvar o arquivo?");
+
+            var texto = file.ToString();
+
+
+            SalvarArquivo(texto);
+           
+        }
+
+        public static void SalvarArquivo(string texto)
+        {
+            Console.Clear();
+            Console.WriteLine("Qual caminho para salvar o arquivo?");
+
+            var path = Console.ReadLine();
+
+            using (var arquivo = new StreamWriter(path)) 
+            {
+                arquivo.Write(texto);
+            }
+
+            Console.WriteLine($"Arquivo {path} salvo com sucesso");
         }
     }
 }
