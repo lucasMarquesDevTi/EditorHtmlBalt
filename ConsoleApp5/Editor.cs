@@ -32,8 +32,9 @@ namespace EditorHtml
                 file.Append(Environment.NewLine);
             } while (Console.ReadKey().Key != ConsoleKey.Escape);
 
+            Console.Clear();
             Console.WriteLine("---------------");
-            Console.WriteLine(" Deseja Salvar o arquivo?");
+            Console.WriteLine("DDeseja Salvar o arquivo?");
             Console.WriteLine("1 - SIM");
             Console.WriteLine("2 - NÃO");
 
@@ -63,7 +64,11 @@ namespace EditorHtml
                 arquivo.Write(texto);
             }
 
+            Console.Clear();    
+
             Console.WriteLine($"Arquivo {path} salvo com sucesso");
+            Thread.Sleep(3000);
+            Menu.Show();
         }
     }
 }
