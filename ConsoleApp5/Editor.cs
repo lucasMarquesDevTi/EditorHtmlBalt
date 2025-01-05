@@ -34,12 +34,21 @@ namespace EditorHtml
 
             Console.WriteLine("---------------");
             Console.WriteLine(" Deseja Salvar o arquivo?");
+            Console.WriteLine("1 - SIM");
+            Console.WriteLine("2 - NÃO");
+
+            int option = int.Parse(Console.ReadLine());
 
             var texto = file.ToString();
 
+            switch (option)
+            {
+                case 1: SalvarArquivo(texto); break;
+                case 2: Viewer.Show(file.ToString()); break;
+                default: Menu.Show(); break;
+            }
 
-            SalvarArquivo(texto);
-           
+          
         }
 
         public static void SalvarArquivo(string texto)
